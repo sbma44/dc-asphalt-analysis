@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+PG_HOST="${PG_HOST:-192.168.1.50}"
+DB_NAME="${DB_NAME:-dc_asphalt}"
+PGPASSWORD="${PGPASSWORD:-a}"
+export PGPASSWORD
+
+PSQL="psql -q -U postgres -d ${DB_NAME} -h ${PG_HOST}"
+
+# crow-flies distance is 1.300767950229355 km
+PLANT_LOCATION="-76.99877830896837,38.917434485108515"
+HOME_LOCATION="-77.01360255859741,38.91567251910422"
