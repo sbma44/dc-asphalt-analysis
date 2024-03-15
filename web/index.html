@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mapbox Map Review</title>
+    <link href="src/style.css" rel="stylesheet" />
+    <style type="text/css">
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        cursor: crosshair;
+      }
+      .hide { display: none; }
+    </style>
+  </head>
+  <body class="bg-[#000000] flex items-center h-screen">
+
+    <div id="main" class="">
+        <div id="map"></div>
+
+        <div id="banner" class="fixed top-0 inset-x-0 bg-[#0f9535] text-white text-xl font-bold p-4 shadow-md">
+          <p class="text-center">Drag slider to change distance from asphalt plant</p>
+        </div>
+
+        <div class="fixed inset-x-0 bottom-0 mb-4 flex flex-col items-center">
+          <div class="flex w-3/4 justify-between mb-4">
+              <div class="text-center bg-white rounded-lg p-4 shadow w-1/6">
+                  <p class="text-4xl text-blue-500" id="schools"></p>
+                  <p class="text-base text-gray-600">Schools</p>
+              </div>
+              <div class="text-center bg-white rounded-lg p-4 shadow w-1/6">
+                  <p class="text-4xl text-green-500" id="enrollment"></p>
+                  <p class="text-base text-gray-600">Enrolled Kids</p>
+              </div>
+              <div class="text-center bg-white rounded-lg p-4 shadow w-1/6">
+                  <p class="text-4xl text-red-500" id="units"></p>
+                  <p class="text-base text-gray-600">Residential Units</p>
+              </div>
+          </div>
+          <div class="relative flex flex-col items-center w-3/4">
+            <div class="tooltip hidden absolute bottom-full mb-2 px-3 py-1 bg-white font-bold text-black text-sm rounded" id="tooltip">
+                <span id="tooltipValue">50</span>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 w-full">
+                <input type="range" class="w-full" id="slider" step="0.5" value="50" />
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
+
